@@ -46,7 +46,9 @@ const Home: NextPage = () => {
                 todo: input
             }
         }))
+        setInput('');
         setUpdate(false);
+        
     }
     const completedTodo = (id: string) => {
         setTodos(todos.map(todo => {
