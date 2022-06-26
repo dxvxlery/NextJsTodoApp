@@ -3,7 +3,7 @@ import EditButton from "../assets/editButton.png";
 import DeleteButton from "../assets/deleteButton.png";
 import ComletedButton from "../assets/completed.png";
 import Image from 'next/image'
-import {ITodos} from "../types/ITodo";
+import { ITodos } from "../types/ITodo";
 
 type ITotoItem = {
     todo: ITodos,
@@ -13,10 +13,10 @@ type ITotoItem = {
     update: boolean
     todoNumber: number
 }
-const TodoList = ({todo, deleteTodo, changeTodo, completedTodo, update}: ITotoItem) => {
+const TodoList = ({ todo, deleteTodo, changeTodo, completedTodo, update }: ITotoItem) => {
     return (
         <div className={s.container}>
-            <input type="checkbox" className={s.changeCompleted} onChange={() => completedTodo(todo.id)}/>
+            <input type="checkbox" className={s.changeCompleted} onChange={() => completedTodo(todo.id)} />
             <p className={todo.completed ? (s.todoNameCompleted) : (s.todoName)}>{todo.todo}</p>
             <div className={s.buttons}>
                 <button disabled={update} className={s.changeImage} onClick={() => changeTodo(todo.id)}>
